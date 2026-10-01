@@ -3,5 +3,18 @@ const generateBtn = document.getElementById("generateBtn");
 const qrCode = document.getElementById("qrCode");
 
 generateBtn.addEventListener("click", () => {
-    console.log("Generate QR Code button clicked");
+    const url = portfolioUrl.value.trim();
+
+    qrCode.innerHTML = "";
+
+    if (!url) {
+        alert("Please enter a URL.");
+        return;
+    }
+
+    new QRCode(qrCode, {
+        text: url,
+        width: 200,
+        height: 200
+    });
 });
