@@ -12,9 +12,20 @@ generateBtn.addEventListener("click", () => {
         return;
     }
 
-    new QRCode(qrCode, {
-        text: url,
-        width: 200,
-        height: 200
-    });
+    try {
+        const validUrl = new URL(url);
+
+        if (!["http:", "https:"].includes(validUrl.protocol)) {
+            throw new Error("Invalid protocol");
+        }
+
+        new QRCode(qrCode, {
+            text: validUrl.href,
+            width: 200,
+            height: 200
+        });
+
+    } catch (error) {
+        alert("Please enter a valid URL.");
+    }
 });
