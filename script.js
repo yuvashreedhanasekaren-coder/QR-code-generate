@@ -56,14 +56,22 @@ downloadBtn.addEventListener("click", () => {
         return;
     }
 
+    const url = portfolioUrl.value.trim();
+    const hostname = new URL(url).hostname.replace("www.", "");
+
+    const filename = `QR-Code-${hostname}.png`;
+
     const link = document.createElement("a");
 
     link.href = qrImage.tagName === "CANVAS"
         ? qrImage.toDataURL("image/png")
         : qrImage.src;
 
-    link.download = "QR-Code.png";
+    link.download = filename;
     link.click();
+
+    message.textContent = "QR code downloaded successfully.";
+    message.style.color = "#16a34a";
 });
 
 clearBtn.addEventListener("click", () => {
