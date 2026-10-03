@@ -3,34 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio QR Code Generator</title>
+
+    <title>QR Code Generator</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>Portfolio QR Code Generator</h1>
-        <p>Generate a QR code for your portfolio website.</p>
+    <main class="app">
 
-        <div class="qr-section">
-            <input type="text" id="portfolioUrl" placeholder="Enter your portfolio URL">
-            <button id="generateBtn">Generate QR Code</button>
+        <section class="card">
 
-            <div id="qrCode"></div>
-        </div>
-    </div>
+            <div class="header">
+                <div class="icon">QR</div>
 
-    <button id="downloadBtn" style="display: none;">
-        Download QR Code
-    </button>
+                <h1>QR Code Generator</h1>
 
-    <button id="clearBtn" style="display: none;">
-        Clear
-    </button>
+                <p>
+                    Convert any URL into a QR code instantly.
+                </p>
+            </div>
 
-    <script src="script.js"></script>
+            <div class="form">
+
+                <label for="portfolioUrl">
+                    Enter your URL
+                </label>
+
+                <input
+                    type="url"
+                    id="portfolioUrl"
+                    placeholder="https://example.com"
+                    autocomplete="off"
+                >
+
+                <button id="generateBtn" class="generate-btn">
+                    Generate QR Code
+                </button>
+
+            </div>
+
+            <div id="qrCode" class="qr-container"></div>
+
+            <div class="actions">
+
+                <button
+                    id="downloadBtn"
+                    class="download-btn"
+                    style="display: none;"
+                >
+                    Download QR Code
+                </button>
+
+                <button
+                    id="clearBtn"
+                    class="clear-btn"
+                    style="display: none;"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+        </section>
+
+        <footer>
+            <p>Simple • Fast • Free</p>
+        </footer>
+
+    </main>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
