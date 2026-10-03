@@ -3,6 +3,7 @@ const generateBtn = document.getElementById("generateBtn");
 const downloadBtn = document.getElementById("downloadBtn");
 const clearBtn = document.getElementById("clearBtn");
 const qrCode = document.getElementById("qrCode");
+const message = document.getElementById("message");
 
 generateBtn.addEventListener("click", () => {
     const url = portfolioUrl.value.trim();
@@ -11,8 +12,12 @@ generateBtn.addEventListener("click", () => {
     downloadBtn.style.display = "none";
     clearBtn.style.display = "none";
 
+    message.textContent = "";
+    message.style.color = "";
+
     if (!url) {
-        alert("Please enter a URL.");
+        message.textContent = "Please enter a URL.";
+        message.style.color = "#dc2626";
         return;
     }
 
@@ -32,8 +37,12 @@ generateBtn.addEventListener("click", () => {
         downloadBtn.style.display = "inline-block";
         clearBtn.style.display = "inline-block";
 
+        message.textContent = "QR code generated successfully.";
+        message.style.color = "#16a34a";
+
     } catch (error) {
-        alert("Please enter a valid URL.");
+        message.textContent = "Please enter a valid URL.";
+        message.style.color = "#dc2626";
     }
 });
 
@@ -42,7 +51,8 @@ downloadBtn.addEventListener("click", () => {
                     qrCode.querySelector("canvas");
 
     if (!qrImage) {
-        alert("Please generate a QR code first.");
+        message.textContent = "Please generate a QR code first.";
+        message.style.color = "#dc2626";
         return;
     }
 
@@ -61,6 +71,7 @@ clearBtn.addEventListener("click", () => {
     qrCode.innerHTML = "";
     downloadBtn.style.display = "none";
     clearBtn.style.display = "none";
+    message.textContent = "";
 });
 
 portfolioUrl.addEventListener("keydown", (event) => {
