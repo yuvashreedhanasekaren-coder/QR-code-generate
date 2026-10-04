@@ -124,27 +124,86 @@ input:focus {
     border-radius: 14px;
 }
 
+/* Generated QR Notification     */
+
+#generateMessage {
+    display: none;
+    width: fit-content;
+    margin: 12px auto 8px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Action Buttons Container      */
+
 .actions {
     display: flex;
     gap: 10px;
     margin-top: 22px;
 }
 
-.actions button {
+/* Download Button + Notification */
+
+.download-action {
     flex: 1;
-    height: 46px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
+    position: relative;
 }
 
-#message {
-    min-height: 20px;
-    margin-top: 8px;
-    font-size: 13px;
-    text-align: left;
+.download-action .download-btn {
+    width: 100%;
+}
+
+#downloadMessage {
+    display: none;
+    position: fixed;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #4ade80;
+    border: none;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    z-index: 9999;
+}
+
+#downloadMessage::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #4ade80;
+}
+
+/* Buttons                       */
+
+.actions button {
+    height: 46px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
 .download-btn {
@@ -158,6 +217,8 @@ input:focus {
 }
 
 .clear-btn {
+    flex: 1;
+
     border: 1px solid #d1d5db;
     background: white;
     color: #374151;
@@ -166,6 +227,8 @@ input:focus {
 .clear-btn:hover {
     background: #f3f4f6;
 }
+
+/* Footer                        */
 
 footer {
     text-align: center;
@@ -176,6 +239,8 @@ footer p {
     color: rgba(255, 255, 255, 0.8);
     font-size: 13px;
 }
+
+/* Mobile  */
 
 @media (max-width: 600px) {
 
@@ -198,5 +263,13 @@ footer p {
 
     .actions button {
         width: 100%;
+    }
+
+    .download-action {
+        width: 100%;
+    }
+
+    #downloadMessage {
+        left: 50%;
     }
 }

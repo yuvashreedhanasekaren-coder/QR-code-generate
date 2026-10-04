@@ -38,7 +38,7 @@
                     autocomplete="off"
                 >
 
-                <p id="message"></p>
+                <p id="generateMessage"></p>
 
                 <button id="generateBtn" class="generate-btn">
                     Generate QR Code
@@ -48,26 +48,33 @@
 
             <div id="qrCode" class="qr-container"></div>
 
+            <p id="downloadMessage"></p>
+
             <div class="actions">
 
-                <button
-                    id="downloadBtn"
-                    class="download-btn"
-                    style="display: none;"
-                >
-                    Download QR Code
-                </button>
+    <div class="download-action">
 
-                <button
-                    id="clearBtn"
-                    class="clear-btn"
-                    style="display: none;"
-                >
-                    Clear
-                </button>
+        <p id="downloadMessage"></p>
 
-            </div>
+        <button
+            id="downloadBtn"
+            class="download-btn"
+            style="display: none;"
+        >
+            Download QR Code
+        </button>
 
+    </div>
+
+    <button
+        id="clearBtn"
+        class="clear-btn"
+        style="display: none;"
+    >
+        Clear
+    </button>
+
+</div>
         </section>
 
         <footer>
