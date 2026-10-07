@@ -25,25 +25,29 @@ Users can enter a website link, generate its QR code, download the QR code as a 
 
 ---
 
+## 🌐 Live Demo
+
+🚀 The project is deployed using **GitHub Pages** and is available online.
+
+👉 **[Open QR Code Generator](https://yuvashreedhanasekaren-coder.github.io/QR-code-generate/)**
+
+You can enter any valid URL and generate, download, and clear the QR code directly from the browser.
+
+---
+
 ## 🖥️ Project Preview
 
-The application provides a clean interface where users can enter any URL and instantly generate its QR code.
+![QR Code Generator Preview](preview.png)
 
-### 🔹 Main Interface
+✨ The preview above shows the QR Code Generator interface, including:
 
-The user enters a website URL into the input field.
-
-### 🔹 QR Code Generation
-
-After clicking **Generate QR Code**, the application validates the URL and creates the QR code.
-
-### 🔹 Download
-
-The generated QR code can be downloaded as a PNG image using the **Download QR Code** button.
-
-### 🔹 Clear
-
-The **Clear** button removes the entered URL and generated QR code.
+- 🔗 URL input
+- ⚙️ QR code generation
+- ✅ Generation success notification
+- 🖼️ Generated QR code
+- 💾 Download QR Code button
+- 📥 Download success notification
+- 🧹 Clear button
 
 ---
 
